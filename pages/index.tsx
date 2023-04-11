@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { getFeaturedEvents } from '../dummy-data';
+import EventList from '../components/events/event-list';
 
-const inter = Inter({ subsets: ['latin'] })
+function HomePage() {
+    const featuredEvents = getFeaturedEvents();
 
-export default function Home() {
-  return (
-      <div>
-        <h1>The Home Page</h1>
-      </div>
-  );
+    return (
+        <div>
+            <EventList items={featuredEvents} />
+        </div>
+    );
 }
+
+export default HomePage;
